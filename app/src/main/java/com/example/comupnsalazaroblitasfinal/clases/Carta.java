@@ -1,6 +1,12 @@
 package com.example.comupnsalazaroblitasfinal.clases;
 
+import androidx.room.Entity;
+import androidx.room.ForeignKey;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "cartas", foreignKeys = @ForeignKey(entity = Duelista.class, parentColumns = "id", childColumns = "duelistaId", onDelete = ForeignKey.CASCADE))
 public class Carta {
+    @PrimaryKey(autoGenerate = true)
     private String nombre;
     private int puntosAtaque;
     private int puntosDefensa;

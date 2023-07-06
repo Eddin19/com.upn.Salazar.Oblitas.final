@@ -1,14 +1,18 @@
 package com.example.comupnsalazaroblitasfinal.clases;
 
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
-@Entity
+import java.util.List;
+
+@Entity(tableName = "duelistas")
 public class Duelista {
     @PrimaryKey(autoGenerate = true)
     private int id;
-
     private String nombre;
+    @Ignore
+    private List<Carta> cartas;
 
     // Constructor
     public Duelista(String nombre) {

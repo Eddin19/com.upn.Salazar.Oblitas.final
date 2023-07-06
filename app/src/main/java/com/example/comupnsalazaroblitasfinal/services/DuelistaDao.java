@@ -11,6 +11,6 @@ public interface DuelistaDao {
     @Insert
     void insert(Duelista duelista);
 
-    @Query("SELECT * FROM Duelista")
+    @Query("SELECT * FROM duelistas")
     List<Duelista> getAllDuelistas();
 }
