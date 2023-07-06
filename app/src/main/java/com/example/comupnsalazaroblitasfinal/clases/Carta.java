@@ -7,6 +7,8 @@ import androidx.room.PrimaryKey;
 @Entity(tableName = "cartas", foreignKeys = @ForeignKey(entity = Duelista.class, parentColumns = "id", childColumns = "duelistaId", onDelete = ForeignKey.CASCADE))
 public class Carta {
     @PrimaryKey(autoGenerate = true)
+    private long id;
+    private long duelistaId;
     private String nombre;
     private int puntosAtaque;
     private int puntosDefensa;
@@ -15,12 +17,29 @@ public class Carta {
     private double longitud;
 
     public Carta(String nombre, int puntosAtaque, int puntosDefensa, String imagen, double latitud, double longitud) {
+        this.duelistaId = duelistaId;
         this.nombre = nombre;
         this.puntosAtaque = puntosAtaque;
         this.puntosDefensa = puntosDefensa;
         this.imagen = imagen;
         this.latitud = latitud;
         this.longitud = longitud;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public long getDuelistaId() {
+        return duelistaId;
+    }
+
+    public void setDuelistaId(long duelistaId) {
+        this.duelistaId = duelistaId;
     }
 
     public String getNombre() {
