@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.example.comupnsalazaroblitasfinal.adapters.DuelistaAdapter;
 import com.example.comupnsalazaroblitasfinal.clases.Duelista;
 import com.example.comupnsalazaroblitasfinal.services.DuelistaService;
 import com.google.gson.Gson;
