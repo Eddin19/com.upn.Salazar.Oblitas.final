@@ -1,8 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tv"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:rotationX="0">
 
-    
+    <LinearLayout
+        android:id="@+id/tvDuelista"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:rotationX="0">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/tvNombre"
+            android:layout_width="160dp"
+            android:layout_height="207dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:text="Nombre" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="299dp"
+        android:layout_height="307dp">
+
+        <Button
+            android:id="@+id/btnDetalle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="100dp"
+            android:layout_marginBottom="217dp"
+            android:text="Detalle" />
+    </RelativeLayout>
+</LinearLayout>

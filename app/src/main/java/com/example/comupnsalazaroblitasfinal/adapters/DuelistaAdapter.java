@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -35,7 +36,14 @@ public class DuelistaAdapter extends RecyclerView.Adapter<DuelistaAdapter.Duelis
     public void onBindViewHolder(@NonNull DuelistaViewHolder holder, int position) {
         Duelista item = items.get(position);
         View view = holder.itemView;
+
+        // Obtiene la referencia del TextView para mostrar el nombre del Duelista
+        TextView tvNombre = view.findViewById(R.id.tvNombre);
+
+        // Establece el nombre del Duelista en el TextView
+        tvNombre.setText(item.getNombre());
     }
+
 
     @Override
     public int getItemCount() {
