@@ -13,6 +13,12 @@
         android:theme="@style/Theme.ComupnSalazarOblitasfinal"
         tools:targetApi="31">
         <activity
+            android:name=".ListarDuelistaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CrearDuelistaActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
