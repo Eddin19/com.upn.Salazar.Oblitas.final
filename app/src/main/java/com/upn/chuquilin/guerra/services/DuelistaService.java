@@ -1,6 +1,7 @@
-package com.example.comupnsalazaroblitasfinal.services;
+package com.upn.chuquilin.guerra.services;
 
-import com.example.comupnsalazaroblitasfinal.clases.Duelista;
+import com.upn.chuquilin.guerra.entities.Carta;
+import com.upn.chuquilin.guerra.entities.Duelista;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.example.comupnsalazaroblitasfinal.clases;
+package com.upn.chuquilin.guerra.entities;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;

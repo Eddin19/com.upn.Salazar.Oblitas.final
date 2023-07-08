@@ -1,14 +1,14 @@
-package com.example.comupnsalazaroblitasfinal;
+package com.upn.chuquilin.guerra;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class CrearCartaActivity extends AppCompatActivity {
+public class CartaDetallesActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_crear_carta);
+        setContentView(R.layout.activity_carta_detalles);
     }
 }

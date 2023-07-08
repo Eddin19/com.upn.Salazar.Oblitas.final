@@ -1,4 +1,4 @@
-package com.example.comupnsalazaroblitasfinal.clases;
+package com.upn.chuquilin.guerra.entities;
 
 
 import androidx.room.ColumnInfo;
@@ -30,4 +30,7 @@ public class Carta {
     public String imagenBase64;
     @ColumnInfo(name = "nameCarta")
     public String nameCarta;
+
+
+
 }

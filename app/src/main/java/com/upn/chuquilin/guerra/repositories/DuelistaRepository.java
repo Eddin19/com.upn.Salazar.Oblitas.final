@@ -1,4 +1,4 @@
-package com.example.comupnsalazaroblitasfinal.services;
+package com.upn.chuquilin.guerra.repositories;
 
 import androidx.room.Dao;
 import androidx.room.Delete;
@@ -6,12 +6,12 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
-import com.example.comupnsalazaroblitasfinal.clases.Duelista;
+import com.upn.chuquilin.guerra.entities.Carta;
+import com.upn.chuquilin.guerra.entities.Duelista;
 
 import java.util.List;
-
 @Dao
-public interface DuelistaDao {
+public interface DuelistaRepository {
     @Query("SELECT * FROM duelistas")
     List<Duelista> getAllDuelista();
 
@@ -24,9 +24,14 @@ public interface DuelistaDao {
     @Insert
     void createDuelista(Duelista duelista);
     @Insert
-    void AgregarListaDuelista(List<Duelista> duelistas);
+    void AgregarList(List<Duelista> duelistas);
     @Update
     void  updateDuelista(Duelista duelista);
+
     @Delete
-    void deleteDatos(List<Duelista> duelistas);
+    void delete(Duelista duelista);
+
+    @Delete
+    void deleteList(List<Duelista> duelistas);
+
 }

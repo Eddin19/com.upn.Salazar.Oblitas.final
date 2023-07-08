@@ -1,4 +1,6 @@
-package com.example.comupnsalazaroblitasfinal;
+package com.upn.chuquilin.guerra;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,13 +12,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import com.example.comupnsalazaroblitasfinal.clases.Duelista;
-import com.example.comupnsalazaroblitasfinal.db.AppDatabase;
-import com.example.comupnsalazaroblitasfinal.services.DuelistaRepository;
-import com.example.comupnsalazaroblitasfinal.services.DuelistaService;
 import com.google.gson.Gson;
+import com.upn.chuquilin.guerra.db.AppDatabase;
+import com.upn.chuquilin.guerra.entities.Duelista;
+import com.upn.chuquilin.guerra.repositories.DuelistaRepository;
+import com.upn.chuquilin.guerra.services.DuelistaService;
+import com.upn.chuquilin.guerra.utils.RetrofitBuilder;
 
 import java.util.List;
 
@@ -26,6 +27,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 
 public class MainActivity extends AppCompatActivity {
+
     EditText nameDuelista;
     Button btRegistrarDuelista;
     Button btListarDuelista;
@@ -75,21 +77,29 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         DuelistaService serviceD = mRetrofit.create(DuelistaService.class);
+
         if (isNetworkConnected()) {
             List<Duelista> SinSicroDuelistas = repositoryD.searchDuelista(false);
             for (Duelista duelista :SinSicroDuelistas) {
                 Log.d("MAIN_APP: DB SSincro", new Gson().toJson(duelista));
                 duelista.sincronizadoDuelista = true;
                 repositoryD.updateDuelista(duelista);
+                //*****SINCRO*************************
                 SincronizacionDuelista(serviceD,duelista);
+
             }
             List<Duelista> EliminarBDDuelista= repositoryD.getAllDuelista();
             downloadingMockAPIDuelista(serviceD,repositoryD,EliminarBDDuelista);
+
+            Toast.makeText(getBaseContext(), "SINCRONIZADO", Toast.LENGTH_SHORT).show();
         }else {
-            Toast.makeText(getBaseContext(), "SIN CONEXION A INTERNET", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getBaseContext(), "NO HAY INTERNET", Toast.LENGTH_SHORT).show();
+
         }
     }
+
     private void SincronizacionDuelista(DuelistaService duelistaService, Duelista duelista){
         Call<Duelista> call= duelistaService.create(duelista);
         call.enqueue(new Callback<Duelista>() {
@@ -100,10 +110,14 @@ public class MainActivity extends AppCompatActivity {
                     Log.i("MAIN_APP: MockAPI", new Gson().toJson(data));
                 }
             }
+
             @Override
             public void onFailure(Call<Duelista> call, Throwable t) {
+
             }
         });
+
+
     }
     private void downloadingMockAPIDuelista(DuelistaService duelistaService,DuelistaRepository duelistaRepository , List<Duelista> EliminarDuelista){
         //***Eleminar datos de BD
@@ -119,8 +133,10 @@ public class MainActivity extends AppCompatActivity {
                     duelistaRepository.createDuelista(cuenta);
                 }
             }
+
             @Override
             public void onFailure(Call<List<Duelista>> call, Throwable t) {
+
             }
         });
     }

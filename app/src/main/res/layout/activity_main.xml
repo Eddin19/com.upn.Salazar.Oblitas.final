@@ -7,41 +7,50 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/tvYugi"
-        android:layout_width="338dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="84dp"
-        android:text=" YuGi-OH"
-        android:textSize="46sp"
+        android:id="@+id/textView"
+        android:layout_width="259dp"
+        android:layout_height="82dp"
+        android:text="Registrar Duelista"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.561"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.003" />
+        app:layout_constraintVertical_bias="0.268" />
+
+    <EditText
+        android:id="@+id/nameDuelista"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Ingrese nombre"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnCrearDuelista"
+        android:id="@+id/btRegistrarDuelista"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Crear Duelista"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintEnd_toStartOf="@+id/btListarDuelista"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.939" />
+        app:layout_constraintVertical_bias="0.945" />
 
     <Button
-        android:id="@+id/btnListarDuelistas"
+        android:id="@+id/btListarDuelista"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="44dp"
         android:text="Ver Duelistas"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.477"
-        app:layout_constraintStart_toEndOf="@+id/btnCrearDuelista"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.939" />
+        app:layout_constraintVertical_bias="0.945" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

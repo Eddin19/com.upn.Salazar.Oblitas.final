@@ -1,14 +1,14 @@
 package com.example.comupnsalazaroblitasfinal;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 
-public class ListarCartasActivity extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class CartaDetallesActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_listar_cartas);
+        setContentView(R.layout.activity_carta_detalles);
     }
 }
